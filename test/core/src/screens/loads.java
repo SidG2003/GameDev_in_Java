@@ -28,14 +28,20 @@ public class loads implements Screen {
         tankGame.batch.draw(img, 0, 0, 1280, 720);
         tankGame.batch.end();
         int but = by + 194;
+        int back = 108;
 
         if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
             Game.setScreen(new mainMenu(Game));
         }
-        if ((Gdx.input.getX() > 90) && (Gdx.input.getX() < (90+bx)) && (Gdx.input.getY()<(720-194) && Gdx.input.getY()>(720-(but)))) {
+        if ((Gdx.input.getX() > 90) && (Gdx.input.getX() < (90+bx)) && (Gdx.input.getY()<(194+by) && Gdx.input.getY()>194)) {
             if (Gdx.input.isTouched()) {
                 this.dispose();
                 Game.setScreen(new battle(Game));
+            }
+        }
+        if (Gdx.input.getX() < back && Gdx.input.getX() > 0 && Gdx.input.getY() > 0 && Gdx.input.getY() < back){
+            if (Gdx.input.isTouched()){
+                Game.setScreen(new mainMenu(Game));
             }
         }
     }

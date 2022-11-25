@@ -21,17 +21,17 @@ public class title_screen implements Screen {
 
     @Override
     public void show() {
-        img = new Texture("titlefinal.png");
+        img = new Texture("title.jpg");
     }
 
     @Override
     public void render(float delta) {
         ScreenUtils.clear(0, 0, 0, 1);
         tankGame.batch.begin();
-        tankGame.batch.draw(img, 0, 0);
+        tankGame.batch.draw(img, 0, 0,1280,720);
         tankGame.batch.end();
 
-        if (Gdx.input.isKeyPressed(Input.Keys.ENTER)){
+        if (Gdx.input.isKeyPressed(Input.Keys.ANY_KEY)){
             Game.setScreen(new mainMenu(Game));
             dispose();
         }

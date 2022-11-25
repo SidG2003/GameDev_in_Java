@@ -18,7 +18,7 @@ public class battle implements Screen {
 
     @Override
     public void show() {
-        img = new Texture("redBack.png");
+        img = new Texture("ingame.png");
     }
 
     @Override
@@ -31,7 +31,14 @@ public class battle implements Screen {
         if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
             Game.setScreen(new pauseMenu(Game));
         }
-        if ((Gdx.input.getX() > 90) && (Gdx.input.getX() < (90+bx)) && (Gdx.input.getY()<(720-194) && Gdx.input.getY()>(720-(but))))
+        if (Gdx.input.getX() < bx && Gdx.input.getX() > 0 && Gdx.input.getY() > 0 && Gdx.input.getY() < bx){
+            if (Gdx.input.isTouched()){
+            Game.setScreen(new pauseMenu(Game));
+            }
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.ENTER)) {
+            Game.setScreen(new gameOver(Game));
+        }
     }
 
     @Override

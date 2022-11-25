@@ -29,9 +29,6 @@ public class mainMenu implements Screen {
         tankGame.batch.end();
         int but = by + 15;
 
-        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-            Game.setScreen(new tankChoice(Game));
-        }
         if ((Gdx.input.getX() > (1280 / 2 - bx / 2)) && (Gdx.input.getX() < (640 + (bx / 2))) && (Gdx.input.getY()>(226+but) && Gdx.input.getY()<(226+but+by))) {
             if (Gdx.input.isTouched()) {
                 this.dispose();

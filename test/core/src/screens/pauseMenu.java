@@ -8,9 +8,10 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class pauseMenu implements Screen {
     private Texture img;
+    private Texture img2;
     tankGame Game;
-    int bx = 1100;
-    int by = 106;
+    int bx = 430;
+    int by = 85;
 
     public pauseMenu(tankGame game) {
         this.Game = game;
@@ -18,7 +19,7 @@ public class pauseMenu implements Screen {
 
     @Override
     public void show() {
-        img = new Texture("greenBack.png");
+        img = new Texture("pauseGame.png");
     }
 
     @Override
@@ -27,7 +28,27 @@ public class pauseMenu implements Screen {
         tankGame.batch.begin();
         tankGame.batch.draw(img, 0, 0, 1280, 720);
         tankGame.batch.end();
-        int but = by + 194;
+        int but = by+15;
+
+        if ((Gdx.input.getX() > (1280 / 2 - bx / 2)) && (Gdx.input.getX() < (640 + (bx / 2))) && (Gdx.input.getY()>(226+but) && Gdx.input.getY()<(226+but+by))) {
+            if (Gdx.input.isTouched()) {
+                this.dispose();
+                Game.setScreen(new battle(Game));
+            }
+        }
+        if ((Gdx.input.getX() > (1280 / 2 - bx / 2)) && (Gdx.input.getX() < (640 + (bx / 2))) && (Gdx.input.getY()>(226) && Gdx.input.getY()<(226+by))) {
+            if (Gdx.input.isTouched()) {
+                this.dispose();
+                Game.setScreen(new battle(Game));
+            }
+        }
+
+        if ((Gdx.input.getX() > (1280 / 2 - bx / 2)) && (Gdx.input.getX() < (640 + (bx / 2))) && (Gdx.input.getY()>(511) && Gdx.input.getY()<(511+by))) {
+            if (Gdx.input.isTouched()) {
+                this.dispose();
+                Game.setScreen(new mainMenu(Game));
+            }
+        }
 
 
     }

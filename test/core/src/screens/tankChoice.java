@@ -11,8 +11,10 @@ public class tankChoice implements Screen{
     private Texture img;
     private Texture tank;
     tankGame Game;
-    private int tx = 500;
-    private int ty = 250;
+    private int tx = 331;
+    private int borderx = 114;
+    private int bordery =  194;
+    private int back = 108;
 
     public tankChoice(tankGame game) {
         this.Game = game;
@@ -34,10 +36,24 @@ public class tankChoice implements Screen{
         tankGame.batch.draw(img, 0, 0,1280,720);
         tankGame.batch.end();
 
-        if (Gdx.input.isTouched()){
-            //this.dispose();
-            //Game.setScreen(new title_screen(Game));
+        if (Gdx.input.getX() > borderx && Gdx.input.getX() < (borderx+tx) && Gdx.input.getY()>bordery && Gdx.input.getY() < (bordery+tx)) {
+            if (Gdx.input.isTouched()) {
+                Game.setScreen(new battle(Game));
+            }
         }
+
+        if (Gdx.input.getX() > (borderx+58+tx+tx) && Gdx.input.getX() < (borderx+58+tx+tx+tx) && Gdx.input.getY()>bordery && Gdx.input.getY() < (bordery+tx)) {
+            if (Gdx.input.isTouched()) {
+                Game.setScreen(new battle(Game));
+            }
+        }
+
+        if (Gdx.input.getX() < back && Gdx.input.getX() > 0 && Gdx.input.getY() > 0 && Gdx.input.getY() < back){
+            if (Gdx.input.isTouched()){
+                Game.setScreen(new mainMenu(Game));
+            }
+        }
+
     }
 
     @Override
@@ -62,6 +78,6 @@ public class tankChoice implements Screen{
 
     @Override
     public void dispose() {
-
+        img.dispose();
     }
 }
