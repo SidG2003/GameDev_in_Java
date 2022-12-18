@@ -11,9 +11,8 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class title_screen implements Screen {
     private Texture img;
-    private Texture img2;
+
     final tankGame Game;
-    OrthographicCamera camera;
 
     public title_screen (tankGame game){
         this.Game = game;

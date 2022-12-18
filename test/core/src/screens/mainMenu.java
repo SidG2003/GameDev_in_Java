@@ -8,9 +8,9 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class mainMenu implements Screen {
     private Texture img;
-    tankGame Game;
-    int bx = 430;
-    int by = 85;
+    private tankGame Game;
+    private int bx = 430;
+    private int by = 85;
 
     public mainMenu(tankGame game) {
         this.Game = game;

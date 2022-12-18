@@ -9,7 +9,6 @@ import com.badlogic.gdx.utils.ScreenUtils;
 public class tankChoice implements Screen{
 
     private Texture img;
-    private Texture tank;
     tankGame Game;
     private int tx = 331;
     private int borderx = 114;
