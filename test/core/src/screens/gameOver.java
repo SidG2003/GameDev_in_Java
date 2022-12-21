@@ -11,9 +11,13 @@ public class gameOver implements Screen {
     tankGame Game;
     int bx = 430;
     int by = 85;
+    tank Tank1;
+    tank Tank2;
 
-    public gameOver(tankGame game) {
+    public gameOver(tankGame game,tank l1, tank l2) {
         this.Game = game;
+        this.Tank1 = l1;
+        this.Tank2 = l1;
     }
 
     @Override
@@ -32,7 +36,7 @@ public class gameOver implements Screen {
         if ((Gdx.input.getX() > (1280 / 2 - bx / 2)) && (Gdx.input.getX() < (640 + (bx / 2))) && (Gdx.input.getY()>(226+but) && Gdx.input.getY()<(226+but+by))) {
             if (Gdx.input.isTouched()) {
                 this.dispose();
-                Game.setScreen(new battle(Game));
+                Game.setScreen(new battle(Game,Tank1,Tank2));
             }
         }
 

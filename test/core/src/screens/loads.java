@@ -6,11 +6,14 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.ScreenUtils;
 
+import java.util.ArrayList;
+
 public class loads implements Screen {
     private Texture img;
     tankGame Game;
     int bx = 1100;
     int by = 106;
+    ArrayList<battle> saves = new ArrayList<battle>();
 
     public loads(tankGame game) {
         this.Game = game;
@@ -36,7 +39,7 @@ public class loads implements Screen {
         if ((Gdx.input.getX() > 90) && (Gdx.input.getX() < (90+bx)) && (Gdx.input.getY()<(194+by) && Gdx.input.getY()>194)) {
             if (Gdx.input.isTouched()) {
                 this.dispose();
-                Game.setScreen(new battle(Game));
+                //Game.setScreen(new battle(Game,));
             }
         }
         if (Gdx.input.getX() < back && Gdx.input.getX() > 0 && Gdx.input.getY() > 0 && Gdx.input.getY() < back){

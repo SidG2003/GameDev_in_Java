@@ -38,7 +38,7 @@ public class mainMenu implements Screen {
         if ((Gdx.input.getX() > (1280 / 2 - bx / 2)) && (Gdx.input.getX() < (640 + (bx / 2))) && (Gdx.input.getY()>(226) && Gdx.input.getY()<(226+by))) {
             if (Gdx.input.isTouched()) {
                 this.dispose();
-                Game.setScreen(new tankChoice(Game));
+                Game.setScreen(new tankChoice(Game,0));
             }
         }
 

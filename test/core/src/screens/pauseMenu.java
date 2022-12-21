@@ -12,8 +12,12 @@ public class pauseMenu implements Screen {
     tankGame Game;
     int bx = 430;
     int by = 85;
+    tank Tank1;
+    tank Tank2;
 
-    public pauseMenu(tankGame game) {
+    public pauseMenu(tankGame game,tank p1, tank p2) {
+        this.Tank1 = p1;
+        this.Tank2 = p2;
         this.Game = game;
     }
 
@@ -33,13 +37,13 @@ public class pauseMenu implements Screen {
         if ((Gdx.input.getX() > (1280 / 2 - bx / 2)) && (Gdx.input.getX() < (640 + (bx / 2))) && (Gdx.input.getY()>(226+but) && Gdx.input.getY()<(226+but+by))) {
             if (Gdx.input.isTouched()) {
                 this.dispose();
-                Game.setScreen(new battle(Game));
+                Game.setScreen(new battle(Game,Tank1,Tank2));
             }
         }
         if ((Gdx.input.getX() > (1280 / 2 - bx / 2)) && (Gdx.input.getX() < (640 + (bx / 2))) && (Gdx.input.getY()>(226) && Gdx.input.getY()<(226+by))) {
             if (Gdx.input.isTouched()) {
                 this.dispose();
-                Game.setScreen(new battle(Game));
+                Game.setScreen(new battle(Game,Tank1,Tank2));
             }
         }
 
